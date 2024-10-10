@@ -1,0 +1,89 @@
+/* 二维码容器的基本样式 */
+#qr-code-container {
+  position: fixed; /* 固定位置 */
+  bottom: 20px; /* 距离底部20px */
+  right: 20px; /* 距离右侧20px */
+  z-index: 9999; /* 确保显示在其他元素之上 */
+  background-color: white;
+  border-radius: 5px; /* 圆角边框 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 添加阴影效果 */
+  cursor: pointer; /* 鼠标悬停时显示手型光标 */
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  padding: 0;
+  width: 48px; /* 设置固定宽度，与图标大小相匹配 */
+  height: 48px; /* 设置固定高度，与图标大小相匹配 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  transition: all 0.1s ease; /* 添加过渡效果，使展开/收缩更平滑 */
+}
+
+/* 图标按钮样式 */
+#qr-icon-button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  background-color: white;
+}
+
+/* 图标按钮中的图片样式 */
+#qr-icon-button img {
+  width: 32px; /* 设置图标宽度 */
+  height: 32px; /* 设置图标高度 */
+}
+
+/* 二维码包装器样式 */
+#qr-code-wrapper {
+  display: none; /* 默认隐藏 */
+  padding: 10px; /* 减少内边距 */
+  border: 1px solid #ccc; /* 添加边框 */
+  border-radius: 5px; /* 圆角边框 */
+}
+
+/* 二维码元素样式 */
+#qr-code {
+  position: relative;
+  width: 128px; /* 设置二维码宽度 */
+  height: 128px; /* 设置二维码高度 */
+}
+
+/* 页面图标样式（二维码中心的图标） */
+#page-icon {
+  position: absolute;
+  top: 50%; /* 垂直居中 */
+  left: 50%; /* 水平居中 */
+  transform: translate(-50%, -50%); /* 精确居中定位 */
+  width: 24px; /* 设置图标宽度 */
+  height: 24px; /* 设置图标高度 */
+  background-color: white;
+  padding: 2px;
+  border-radius: 50%; /* 圆形图标 */
+}
+
+/* 页面URL文本样式 */
+#page-url {
+  margin-top: 5px; /* 减少上边距 */
+  font-size: 10px; /* 稍微减小字体大小 */
+  word-break: break-all; /* 允许在任意字符间换行 */
+  max-width: 128px; /* 限制最大宽度，与二维码宽度一致 */
+  text-align: center;
+}
+
+/* 展开状态的容器样式 */
+#qr-code-container.expanded {
+  width: auto; /* 自动调整宽度 */
+  height: auto; /* 自动调整高度 */
+  padding: 0px; /* 减少内边距 */
+}
+
+/* 展开状态下隐藏图标按钮 */
+#qr-code-container.expanded #qr-icon-button {
+  display: none;
+}
+
+/* 展开状态下显示二维码包装器 */
+#qr-code-container.expanded #qr-code-wrapper {
+  display: block;
+}
