@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>网页二维码生成助手</title>
+  <style>
+    body {
+      width: 180px;
+      padding: 10px 5px;
+      margin: 0;
+      text-align: center;
+    }
+    h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    #qrcode {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #qrcode img {
+      display: block;
+      width: 160px !important;
+      height: 160px !important;
+    }
+  </style>
+</head>
+<body>
+  <h3>当前页面二维码</h3>
+  <div id="qrcode"></div>
+  <script src="qrcode.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
