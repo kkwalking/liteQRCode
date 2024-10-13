@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>网页二维码生成器设置</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>网页二维码生成器设置</h1>
+  <label>
+    <input type="checkbox" id="showIcon"> 显示网页右下角的图标
+  </label>
+  <label>
+    二维码大小：
+    <input type="range" id="qrSize" min="64" max="256" step="16" value="128">
+    <span id="qrSizeValue">128</span>px
+  </label>
+  <button id="save">保存设置</button>
+  <script src="options.js"></script>
+</body>
+</html>

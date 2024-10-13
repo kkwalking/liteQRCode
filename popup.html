@@ -5,31 +5,43 @@
   <title>网页二维码生成助手</title>
   <style>
     body {
-      width: 180px;
-      padding: 10px 5px;
       margin: 0;
-      text-align: center;
-    }
-    h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 14px;
+      padding: 5px;
+      font-family: Arial, sans-serif;
+      width: 250px;
     }
     #qrcode {
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-bottom: 10px;
     }
     #qrcode img {
       display: block;
-      width: 160px !important;
-      height: 160px !important;
+    }
+    .settings {
+      margin-top: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="range"] {
+      width: 100%;
     }
   </style>
 </head>
 <body>
-  <h3>当前页面二维码</h3>
   <div id="qrcode"></div>
+  <div class="settings">
+    <label>
+      <input type="checkbox" id="showIcon"> 显示在网页右下角
+    </label>
+    <label>
+      二维码大小：<span id="qrSizeValue">160</span>px
+      <input type="range" id="qrSize" min="64" max="256" step="16" value="160">
+    </label>
+  </div>
   <script src="qrcode.min.js"></script>
   <script src="popup.js"></script>
 </body>

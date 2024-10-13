@@ -4,8 +4,10 @@
     "version": "1.0",
     "description": "生成当前网页的二维码并显示在右下角",
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "storage"
     ],
+    "host_permissions": ["<all_urls>"],
     "content_scripts": [
         {
             "matches": [
@@ -27,5 +29,6 @@
             "48": "icon48.png",
             "128": "icon128.png"
         }
-    }
+    },
+    "options_page": "options.html"
 }

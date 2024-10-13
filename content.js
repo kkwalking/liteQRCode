@@ -1,3 +1,31 @@
+let showIcon = true;
+let qrSize = 128;
+
+chrome.storage.sync.get(["showIcon", "qrSize"], function (result) {
+  showIcon = result.showIcon !== false;
+  updateQRCode();
+});
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (request.action === "updateSettings") {
+    chrome.storage.sync.get(["showIcon", "qrSize"], function (result) {
+      showIcon = result.showIcon !== false;
+      updateQRCode();
+    });
+  }
+});
+
+function updateQRCode() {
+  const existingContainer = document.getElementById("qr-code-container");
+  if (existingContainer) {
+    existingContainer.remove();
+  }
+
+  if (showIcon) {
+    createQRCode();
+  }
+}
+
 function createQRCode() {
   const url = window.location.href;
   const qrContainer = document.createElement("div");
@@ -59,4 +87,4 @@ function toggleQRCode() {
   }
 }
 
-createQRCode();
+updateQRCode();
