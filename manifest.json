@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "网页二维码生成器",
     "version": "1.0",
-    "description": "生成当前网页的二维码并显示在右下角",
+    "description": "1. 生成当前网页的二维码并显示在右下角；2. 点击扩展弹出二维码；3.支持调整二维码大小、支持控制网页右下角二维码显示隐藏",
     "permissions": [
         "activeTab",
         "storage"
